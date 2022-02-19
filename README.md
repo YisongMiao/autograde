@@ -37,4 +37,15 @@ Copied number is 156
 done
 ```
 
-We have 2 Q2, this is because we have typo, and some students fixed in the filename. 
+We have 2 Q2, this is because we have typo, and some students fixed in the filename.
+
+
+## ta.py
+import a student's Class into ta.py and execute that. 
+
+Output:
+```
+/Users/yisong/.conda/envs/autograde/bin/python /Users/yisong/autograde/script/ta.py
+<class 'A0000001L.Tokenizer'>
+Successfully import a class from a student
+```
