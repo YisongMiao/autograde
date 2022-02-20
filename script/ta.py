@@ -23,6 +23,9 @@ if __name__ == '__main__':
         if re.search(r'pycache', dirName): continue  # handle possible pycache issue
         print('Found directory: {}'.format(dirName))
         print('Found {} file: {}'.format(len(fileList), fileList))
+
+        correct_import = 0
+        incorrect_import = 0
         for fname in fileList:
             # Yisong: Yuxi, you can also parameterize it: A0000001L, A0000002L ...
             print('-----Executing a new file-----\nCurrent file name is: {}'.format(fname))
@@ -30,6 +33,12 @@ if __name__ == '__main__':
                 print('Not correct file')
                 continue
             matric_num = re.findall(r'A[0-9]+[A-Z]', fname)[0]
-            Tokenizer = importName(matric_num, "Tokenizer")
-            print(Tokenizer)
-            print('Successfully import a class from a student')
+            try:
+                Tokenizer = importName(matric_num, "Tokenizer")
+                print(Tokenizer)
+                print('Successfully import a class from a student')
+                correct_import += 1
+            except:
+                print('Not importing correctly')
+                incorrect_import += 1
+        print('correct_import: {}, incorrect_import: {}'.format(correct_import, incorrect_import))
